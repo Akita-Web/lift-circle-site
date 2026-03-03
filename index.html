@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 基本メタ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- タイトル・ディスクリプション -->
+  <title>ページタイトル | </title>
+  <meta name="description" content="ページの概要を120〜160文字程度で記述します。検索結果での表示に使われます。">
+  <meta name="robots" content="index, follow">
+
+  <!-- OGP / SNS -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ページタイトル">
+  <meta property="og:description" content="ページの概要を記述します。">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://example.com/ogp.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ページタイトル">
+  <meta name="twitter:description" content="ページの概要を記述します。">
+  <meta name="twitter:image" content="https://example.com/ogp.jpg">
+
+  <!-- ファビコン / テーマカラー -->
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+
+  <!-- CSS / JS -->
+  <link rel="stylesheet" href="css/sanitize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="/js/script.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+      <div class="container">
+        <div class="logo">
+          <a href="#fv"><img src="imgs/logo.png" alt="ロゴ画像"></a>
+        </div>
+
+        <!-- SP用 ハンバーガーボタン -->
+         <button class="nav-toggle" type="button" aria-controls="global-nav" aria-expanded="false">
+          <!-- aria-controls="global-nav" このボタンはどのメニューを開閉するかを示すお約束 -->
+          <!-- aria-expanded="false" このボタンに対応するメニューは今閉じている状態であることをスクリーンリーダーに伝える-->
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="sr-only">メニューを開く</span>
+         </button>
+
+        <nav class="global-nav" id="global-nav">
+          <ul>
+            <li><a href="#fv"><span>トップ</span></a></li>
+            <li><a href="#liftcircle"><span>THE LIFT CIRCLE</span></a></li>
+            <li><a href="#community"><span>コミュニティ</span></a></li>
+            <!--<li><a href="#"><span>チャレンジメルマガ</span></a></li>-->
+            <li><a href="#personal"><span>パーソナル</span></a></li>
+            <li><a href="#whyitworks"><span>続けられる理由</span></a></li>
+            <li><a href="#howtojoin"><span>参加の流れ</span></a></li>
+            <li><a href="#pricing"><span>料金</span></a></li>
+            <li><a href="#faq"><span>よくある質問</span></a></li>
+            <li><a href="/contact/contact.html"><span>お問い合わせ</span></a></li>
+          </ul>
+        </nav>
+      </div>
+  </header>
+
+  <section class="fv" id="fv">
+    <div class="fv-container">
+      <div class="fv-img-box">
+        <img src="imgs/fv.png" alt="ファーストビュー画像">
+      </div>
+      <div class="slogan">
+        <h1>筋トレで世界を<br><span>LIFT</span><br>する</h1>
+      </div>
+      <div class="sub-slogan">
+        <h2>THE LIFT CIRCLE<br>
+          支え合いが循環する</h2>
+      </div>
+    </div>
+  </section>
+
+  <main>
+  <!-- THE LIFT CIRCLEについて -->
+  <section class="liftcircle" id="liftcircle">
+    <div class="section-title">
+      <div class="line-adjust-wrapper">
+        <h3 class="en-title">About THE LIFT CIRCLE</h3>
+        <span class="title-line"></span>
+      </div>
+      <h3 class="jp-title">THE LIFT CIRCLEについて</h3>
+    </div>
+
+    <div class="about-liftcircle">
+      <p>THE LIFT CIRCLEは【自らを高め支えられる環境】を作り上げることを目標としています。</p>
+      <p>テーマは、「意思力に頼らず、環境と仕組みで続ける」こと。</p>
+      <p>運動が続かないのは、やる気や根性の問題ではなく、続けにくい環境にいることが原因です。</p>
+      <p>THE LIFT CIRCLEで、同じ目標を持つ仲間を見つけ、第一歩を踏み出しましょう。</p>
+      <p>また、活動の一部は寄付として還元し、支え合いの循環を社会へと広げていきます。</p>
+    </div>
+
+    <div class="linebox">
+      <h3 class="linebox-title">こんな人におすすめ！</h3>
+      <ul class="recommend-list">
+        <li>一人だと続かない</li>
+        <li>やり方が分からない</li>
+        <li>正しいフォームで行えてるか不安</li>
+      </ul>
+    </div>
+
+    <div class="services-to-continue">
+      <div class="services-to-continue-title">
+        <p>続けるための２つのサービス</p>
+      </div>
+      <div class="services-to-continue-grid-parent">
+        <a href="#community">
+          <div class="services-to-continue-grid-child">
+            <img src="imgs/community.png" alt="コミュニティ">
+            <p class="services-title">コミュニティ</p>
+            <p class="services-text">フォーム改善ポイントを動画でお届けし、迷わず継続できる環境を整えています。</p>
+            <p class="read-more">Read More ></p>
+          </div>
+          </a>
+        <a href="#personal">
+          <div class="services-to-continue-grid-child">
+            <img src="imgs/personal.png" alt="パーソナル">
+            <p class="services-title">パーソナル</p>
+            <p class="services-text">3ヶ月間で「1人で継続できる正しいフォームと知識の習得」を目指すサービス</p>
+            <p class="read-more">Read More ></p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- コミュニティ -->
+  <section class="community" id="community">
+    <div class="section-title">
+      <div class="line-adjust-wrapper">
+        <h3 class="en-title">Community</h3>
+        <span class="title-line"></span>
+      </div>
+      <h3 class="jp-title">コミュニティ</h3>
+    </div>
+
+    <div class="community-detail">
+      <div class="community-detail-back">
+        <div class="community-detail-line">
+          <div class="community-detail-text">
+            <p>
+              このコミュニティは、トレーニングを継続したい方のための環境です。<br>
+            参加は任意で、いつでも参加できます。<br>
+            一人では続けにくいトレーニングも、同じ目標を持つ人が集まることで、自然と続けやすい環境を作ります。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="community-content">
+      <div class="community-content-title">
+        <p>コミュニティの内容</p>
+      </div>
+      <div class="community-content-text">
+        <p>コミュニティ内では、週2回のトレーニング解説動画の配信、継続を後押しする情報共有などを行います。</p>
+        <p>
+          「何をやればいいか分からない」<br>
+          「いつも同じトレーニングになってしまう」<br>
+          といった悩みを減らし、自主トレーニングの指針として活用できます。
+        </p>
+      </div>
+    </div>
+
+    <div class="community-positioning">
+      <div class="community-positioning-back">
+        <div class="community-positioning-title">
+          <p>コミュニティの位置づけ</p>
+        </div>
+        <div class="community-positioning-text">
+          <p>
+            このコミュニティは、パーソナルやメルマガで身につけた内容を、長く続けるための場です。<br>
+            トレーニングは、継続することが一番の武器です。<br>
+            環境の力を使いながら、無理なくトレーニングを続けていくことを目指します。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- パーソナル -->
+  <section class="personal" id="personal">
+    <div class="section-title">
+      <div class="line-adjust-wrapper">
+        <h3 class="en-title">Personal</h3>
+        <span class="title-line"></span>
+      </div>
+      <h3 class="jp-title">パーソナル</h3>
+    </div>
+
+    <div class="personal-detail">
+      <div class="personal-detail-back">
+        <div class="personal-detail-line">
+          <div class="personal-detail-text">
+            <p>
+              このパーソナルは、3ヶ月間で「1人で継続できる正しいフォームと知識の習得」を目指し、卒業を目指す完了型のサービスです。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="personal-strengths">
+      <p>心理学と、100名以上の指導経験をもとに、目標設定・挫折対策・習慣化の仕組みを組み込みながら、3ヶ月でトレーニングを生活の一部に変えていきます。<br><br>
+        <span>※ 科学的に検証されている「習慣化に必要な期間」をもとに設計しています。</span>
+      </p>
+    </div>
+
+    <div class="personal-flowofservice">
+      <div class="personal-flowofservice-title">
+        <p>サービス利用の流れ</p>
+      </div>
+      <div class="personal-flowofservice-grid-parent">
+        <div class="personal-flowofservice-grid-child">
+          <div class="personal-flowofservice-how">
+            <p>1</p>
+            <p>無料体験トレーニング</p>
+          </div>
+          <div class="personal-flowofservice-back">
+            <div class="personal-flowofservice-text">
+              <p>
+                まずは、オンラインでトレーナーと実際に一緒にトレーニングを行います。<br>
+                指導の雰囲気や進め方を体験しながら、<br>
+                <ul>
+                  <li>自分に合っているか</li>
+                  <li>続けられそうか</li>
+                  <li>不安な点はないか</li>
+                </ul>
+                を確認していただきます。<br><br>
+                「一人だと続かない」「何から始めればいいか分からない」そんな方でも、安心して始められる無料体験です。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="personal-flowofservice-grid-child">
+          <div class="personal-flowofservice-how personal-flowofservice-end">
+            <p>2</p>
+            <p>プラン選択・サービス開始</p>
+          </div>
+          <div class="personal-flowofservice-back">
+            <div class="personal-flowofservice-text">
+              <p>
+                無料体験後、ご希望の方はプランを選択しサービス開始となります。<br>
+                今後の進め方や目標、不安点を共有します。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="personal-flowofservice-grid-child">
+          <div class="personal-flowofservice-how">
+            <p>3</p>
+            <p>オンラインパーソナルトレーニング<br>＋継続サポート</p>
+          </div>
+          <div class="personal-flowofservice-back">
+            <div class="personal-flowofservice-text">
+              <p>
+                相談しながら日程を決め、オンラインでパーソナルトレーニングを行います。
+                正しいフォームや考え方を身につけ、卒業後も一人で続けられる力を育てていきます。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 続けられる理由 -->
+  <section class="whyitworks" id="whyitworks">
+    <div class="section-title">
+      <div class="line-adjust-wrapper">
+        <h3 class="en-title">Why It Works</h3>
+        <span class="title-line"></span>
+      </div>
+      <h3 class="jp-title">続けられる理由</h3>
+    </div>
+
+    <div class="whyitworks-important">
+      このサービスでは<br>一人にしないことを大切にしています。
+    </div>
+
+    <div class="whyitworks-title">
+      <p>1</p>
+      <p>定期的にトレーナーと関わるから続く</p>
+    </div>
+    <div class="whyitworks-text">
+      <p>
+        オンラインでのパーソナルトレーニングに加え、LINEでの相談を通して、トレーナーと定期的に関わる機会があります。<br>
+        分からないことや不安を、そのままにせず相談できる環境があることで、途中で挫折しにくくなります。
+      </p>
+    </div>
+    <div class="whyitworks-title">
+      <p>2</p>
+      <p>環境があるから続く</p>
+    </div>
+    <div class="whyitworks-text">
+      <p>
+        トレーニングは、継続することが一番の武器です。<br>
+        どんなに正しいトレーニングでも、続かなければ成果は出ません。<br>
+        人は誰でも、意思力が弱くて当たり前です。<br>
+        だからこそ、このサービスでは環境を整えることを大切にしています。<br>
+        一人で頑張るのではなく、励まし合い、協力しながら、自然とモチベーションが上がる環境を、コミュニティとして用意しています。<br>
+        あなたの行動や言葉が誰かの力になり、誰かの継続が、あなたの背中を押す。<br>
+        そんな関係性の中で、トレーニングを続けていきます。<br>
+      </p>
+    </div>
+    <div class="whyitworks-title">
+      <p>3</p>
+      <p>「やり方」が分かるから迷わない</p>
+    </div>
+    <div class="whyitworks-text">
+      <p>
+        何をやればいいか分からない、いつも同じトレーニングになってしまって成果が感じにくい。<br>
+        そんな悩みは、運動が続かなくなる大きな原因です。<br>
+        このサービスでは、専門のトレーナーが週2回、トレーニングのポイントを解説した動画を配信し、自主トレーニングの指針を提供します。<br>
+        「次に何をすればいいか」が分かることで、迷いが減り、自然と行動しやすくなります。<br>
+      </p>
+    </div>
+    <div class="whyitworks-title">
+      <p>4</p>
+      <p>3ヶ月で自立を目指す設計</p>
+    </div>
+    <div class="whyitworks-text">
+      <p>
+        このパーソナルは、通い続けることを目的としたサービスではありません。<br>
+        3ヶ月間で、自分の判断でトレーニングを続けられる状態を目指します。<br>
+        トレーナーに頼りきりになるのではなく、少しずつ自分で考えて動けるよう、段階的にサポートします。<br>
+      </p>
+    </div>
+  </section>
+
+  <section class="howtojoin" id="howtojoin">
+    <div class="section-title">
+      <div class="line-adjust-wrapper">
+        <h3 class="en-title">How to Join</h3>
+        <span class="title-line"></span>
+      </div>
+      <h3 class="jp-title">参加の流れ</h3>
+    </div>
+
+    <div class="howtojoin-flow">
+
+      <div class="howtojoin-flow-num">
+        <p>01</p>
+      </div>
+      <div class="howtojoin-flow-box">
+        <div class="howtojoin-flow-title">
+          <p>公式LINEを追加</p>
+        </div>
+        <div class="howtojoin-flow-text">
+          <p>まずは公式LINEを追加して、無料体験を予約します。</p>
+          <p class="line-link"><a href="https://lin.ee/0Jp86RK">公式ラインの追加はこちら！</a></p>
+        </div>
+      </div>
+
+      <div class="howtojoin-flow-num">
+        <p>02</p>
+      </div>
+      <div class="howtojoin-flow-box">
+        <div class="howtojoin-flow-title">
+          <p>無料体験を選択</p>
+        </div>
+        <div class="howtojoin-flow-text">
+          <p>体験してみたいサービスを選択し、無料体験に参加します。</p>
+        </div>
+      </div>
+
+      <div class="howtojoin-flow-num">
+        <p>03</p>
+      </div>
+      <div class="howtojoin-flow-box">
+        <div class="howtojoin-flow-title">
+          <p>自分に合うか確認</p>
+        </div>
+        <div class="howtojoin-flow-text">
+          <p>無料体験を終えて、ご自身に適した取り組みかどうかをご判断いただきます。</p>
+        </div>
+      </div>
+
+      <div class="howtojoin-flow-num">
+        <p>04</p>
+      </div>
+      <div class="howtojoin-flow-box">
+        <div class="howtojoin-flow-title">
+          <p>目標を達成できる環境を選ぶ</p>
+        </div>
+        <div class="howtojoin-flow-text">
+          <p>
+            無料体験後、ご希望の方のみ参加するサービスをお選びいただきます。<br><br>
+            その一歩が、理想の習慣づくりの始まりになります！
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 料金 -->
+  <section class="pricing" id="pricing">
+    <div class="section-title">
+      <div class="line-adjust-wrapper">
+        <h3 class="en-title">Pricing</h3>
+        <span class="title-line"></span>
+      </div>
+      <h3 class="jp-title">料金</h3>
+    </div>
+
+    <div class="price-list-title">
+      <p>パーソナルプラン一覧<br><span>※価格はすべて税込みです※</span></p>
+    </div>
+
+    <div class="personal-price-list-grid-parent">
+
+      <div class="personal-price-list-grid-child">
+        <div class="personal-price-relative personal-price-premium">
+          <div class="personal-price-title personal-price-title-premium">
+            <p>プレミアム</p>
+          </div>
+          <div class="personal-price-detail">
+            <p>生活・食事・運動すべて含めて<br>本気で変わりたい方向けのフルサポートプラン</p>
+          </div>
+          <div class="personal-price-box">
+            <p>３ヶ月</p>
+            <p>¥100,000-</p>
+            <p>約33,000-/月</p>
+          </div>
+          <div class="personal-service-list">
+            <ul>
+              <li>3ヶ月／月4回（計12回）<br>Zoomトレーニング：月6回</li>
+              <li>完全個別メニュー</li>
+              <li>毎日の食事指導</li>
+              <li>チャット相談：無制限</li>
+              <li>体組成・写真管理</li>
+              <li>生活習慣フルサポート</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="personal-price-list-grid-child">
+        <div class="personal-price-relative personal-price-standard">
+          <div class="personal-price-standard-recomtext">
+            <p>1番人気！</p>
+            <p>まずはここから！</p>
+          </div>
+          <div class="personal-price-title personal-price-title-standard">
+            <p>スタンダード</p>
+          </div>
+          <div class="personal-price-detail">
+            <p>無理なく継続しながら、<br>3ヶ月で「一人で続けられる状態」を<br>目指したい方におすすめ</p>
+          </div>
+          <div class="personal-price-box">
+            <p>３ヶ月</p>
+            <p>¥78,000-</p>
+            <p>約26,000-/月</p>
+          </div>
+          <div class="personal-service-list">
+            <ul>
+              <li>3ヶ月／月4回（計12回）<br>Zoomトレーニング：月4回</li>
+              <li>完全個別メニュー</li>
+              <li>フォーム修正（録画フィードバック可）</li>
+              <li>チャット相談：週1回</li>
+              <li>生活習慣アドバイス（簡易）</li>
+              <li>食事指導：なし</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="personal-price-list-grid-child">
+        <div class="personal-price-relative personal-price-basic">
+          <div class="personal-price-title personal-price-title-basic">
+            <p>ベーシック</p>
+          </div>
+          <div class="personal-price-detail">
+            <p>費用を抑えて、<br>最低限の指導を受けたい方向け</p>
+          </div>
+          <div class="personal-price-box">
+            <p>３ヶ月</p>
+            <p>¥48,000-</p>
+            <p>約16,000-/月</p>
+          </div>
+          <div class="personal-service-list">
+            <ul>
+              <li>3ヶ月／月2回（計6回）Zoomトレーニング：月2回</li>
+              <li>基本メニュー作成</li>
+              <li>フォーム指導（リアルタイムのみ）</li>
+              <li>チャット相談：なし</li>
+              <li>食事指導：なし</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="community-price-list-box">
+      <div class="price-list-title">
+        <p>コミュニティ料金<br><span>※価格はすべて税込みです※</span></p>
+      </div>
+      <div class="community-price-relative">
+        <div class="community-price-title">
+          <p>コミュニティ</p>
+        </div>
+        <div class="community-price-detail">
+            <p>任意で参加できます</p>
+          </div>
+          <div class="community-price-box">
+            <p><span>月額</span>¥2,200-</p>
+          </div>
+          <div class="community-service-list">
+            <ul>
+              <li>週2回のトレーニング動画配信</li>
+              <li>トレーニングを継続するための環境</li>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- よくある質問 -->
+  <section class="faq" id="faq">
+    <div class="section-title">
+      <div class="line-adjust-wrapper">
+        <h3 class="en-title">FAQ</h3>
+        <span class="title-line"></span>
+      </div>
+      <h3 class="jp-title">よくある質問</h3>
+    </div>
+
+    <div class="accordion">
+
+    <div class="accordion-item">
+      <button class="accordion-header">
+        Q. 運動初心者でも参加できますか？
+      </button>
+      <div class="accordion-content">
+        <p>
+          はい、参加できます。<br>
+          このサービスは、運動経験が少ない方や、これから始めたい方を想定しています。
+        </p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">
+        Q. ジムに通う必要はありますか？
+      </button>
+      <div class="accordion-content">
+        <p>
+          いいえ、ありません。<br>
+          オンラインでのパーソナルトレーニングと、自主トレーニングを中心に進めていきます。
+        </p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">
+        Q. コミュニティだけ参加することはできますか？
+      </button>
+      <div class="accordion-content">
+        <p>はい、可能です。<br>
+          コミュニティはパーソナルの受講有無に関わらず、任意で参加できます。
+        </p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">
+        Q. コミュニティでは何が行われますか？
+      </button>
+      <div class="accordion-content">
+        <p>
+          コミュニティ内では、週2回のトレーニング動画配信などを行い、トレーニングを継続するための環境を提供します。
+        </p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">
+        Q. 支払い方法を教えてください。
+      </button>
+      <div class="accordion-content">
+        <p>
+          お支払いは、Squareの専用フォームから行っていただきます。<br>
+          公式LINE登録後、LINEにて専用フォームをご案内します。
+        </p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">
+        Q. 返金はできますか？
+      </button>
+      <div class="accordion-content">
+        <p>
+          サービスの性質上、原則として返金は行っていません。<br>
+          詳細はお申し込み前にご確認ください。
+        </p>
+      </div>
+    </div>
+
+  </section>
+  </main>
+
+  <!-- お問い合わせ -->
+  <section class="contact" id="contact">
+    <div class="section-title">
+      <div class="line-adjust-wrapper">
+        <h3 class="en-title">Contact</h3>
+        <span class="title-line"></span>
+      </div>
+      <h3 class="jp-title">お問い合わせ</h3>
+    </div>
+
+    <div class="contactform-link">
+      <a href="/contact/contact.html">お問い合わせフォームはこちら</a>
+    </div>
+
+  </section>
+
+  <!-- 募金グラフ -->
+  <section class="graph">
+    <div class="donation-graph">
+      <img src="#" alt="募金グラフ">
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-img-area">
+      <a href="https://www.instagram.com/liveingym_sho?igsh=aHZtYjdjajlqdWwx&utm_source=qr"><img src="/imgs/instaglam.png" alt="instaglam"></a>
+      <a href="https://lin.ee/0Jp86RK"><img src="/imgs/line.png" alt="Line"></a>
+    </div>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="#fv"><span>トップ</span></a></li>
+        <li><a href="#liftcircle"><span>THE LIFT CIRCLE</span></a></li>
+        <li><a href="#community"><span>コミュニティ</span></a></li>
+        <!--<li><a href="#"><span>チャレンジメルマガ</span></a></li>-->
+        <li><a href="#personal"><span>パーソナル</span></a></li>
+        <li><a href="#whyitworks"><span>続けられる理由</span></a></li>
+        <li><a href="#howtojoin"><span>参加の流れ</span></a></li>
+        <li><a href="#pricing"><span>料金</span></a></li>
+        <li><a href="#faq"><span>よくある質問</span></a></li>
+        <li><a href="/contact/contact.html"><span>お問い合わせ</span></a></li>
+      </ul>
+    </nav>
+    <div class="copyright">
+      <p>© 2026 THE LIFT CIRCLE. All Rights Reserved.</p>
+    </div>
+  </footer>
+    
+</body>
+</html>

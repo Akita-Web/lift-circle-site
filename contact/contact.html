@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 基本メタ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- タイトル・ディスクリプション -->
+  <title>ページタイトル | </title>
+  <meta name="description" content="ページの概要を120〜160文字程度で記述します。検索結果での表示に使われます。">
+  <meta name="robots" content="index, follow">
+
+  <!-- OGP / SNS -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ページタイトル">
+  <meta property="og:description" content="ページの概要を記述します。">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://example.com/ogp.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ページタイトル">
+  <meta name="twitter:description" content="ページの概要を記述します。">
+  <meta name="twitter:image" content="https://example.com/ogp.jpg">
+
+  <!-- ファビコン / テーマカラー -->
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+
+  <!-- CSS / JS -->
+  <link rel="stylesheet" href="../css/sanitize.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="/js/script.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+      <div class="container">
+        <div class="logo">
+          <a href="../index.html"><img src="../imgs/logo.png" alt="ロゴ画像"></a>
+        </div>
+
+        <!-- SP用 ハンバーガーボタン -->
+         <button class="nav-toggle" type="button" aria-controls="global-nav" aria-expanded="false">
+          <!-- aria-controls="global-nav" このボタンはどのメニューを開閉するかを示すお約束 -->
+          <!-- aria-expanded="false" このボタンに対応するメニューは今閉じている状態であることをスクリーンリーダーに伝える-->
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="sr-only">メニューを開く</span>
+         </button>
+
+        <nav class="global-nav" id="global-nav">
+          <ul>
+            <li><a href="../index.html#fv"><span>トップ</span></a></li>
+            <li><a href="../index.html#liftcircle"><span>THE LIFT CIRCLE</span></a></li>
+            <li><a href="../index.html#community"><span>コミュニティ</span></a></li>
+            <!--<li><a href="#"><span>チャレンジメルマガ</span></a></li>-->
+            <li><a href="../index.html#personal"><span>パーソナル</span></a></li>
+            <li><a href="../index.html#whyitworks"><span>続けられる理由</span></a></li>
+            <li><a href="../index.html#howtojoin"><span>参加の流れ</span></a></li>
+            <li><a href="../index.html#pricing"><span>料金</span></a></li>
+            <li><a href="../index.html#faq"><span>よくある質問</span></a></li>
+            <li><a href="/contact/contact.html"><span>お問い合わせ</span></a></li>
+          </ul>
+        </nav>
+      </div>
+  </header>
+
+  <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <h1 class="hero-title">
+              お問い合わせ
+          </h1>
+        </div>
+      </section>
+
+      <!-- お問い合わせフォーム本体 -->
+      <section class="contact" id="contact"> 
+        <div class="contact-inner">
+        <p class="contact-lead">
+          ご相談やご質問などございましたら、下記フォームよりお気軽にご連絡ください。<br>
+          ※内容によっては返信いたしかねる場合があります。<br>
+          ※返信までには数日かかる場合があります。
+        </p>
+
+        <form id="contactForm" action="https://www.ssgform.com/s/6VMUKBVIkokV" method="post" class="contact-form">
+
+          <div class="form-field">
+            <label for="name">お名前</label>
+            <input type="text" id="name" name="お名前" required>
+          </div>
+
+          <div class="form-field">
+            <label for="email">メールアドレス</label>
+            <input type="email" id="email" name="Email" required>
+          </div>
+
+          <div class="form-field">
+            <label for="message">お問い合わせ内容</label>
+            <textarea name="内容" id="message" rows="6" required></textarea>
+          </div>
+
+          <div style="display:none;">
+            <input type="text" name="ssgform_bot_field">
+          </div>
+
+          <div class="contact-submit-wrap">
+            <button type="submit" class="contact-submit">送信する</button>
+          </div>
+
+          <p class="contact-note">
+            ご入力いただいた内容は、お問い合わせへの回答のみに使用し、第三者へ提供することはありません。
+          </p>
+      
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-img-area">
+      <a href="https://www.instagram.com/liveingym_sho?igsh=aHZtYjdjajlqdWwx&utm_source=qr"><img src="../imgs/instaglam.png" alt="instaglam"></a>
+      <a href="https://lin.ee/0Jp86RK"><img src="../imgs/line.png" alt="Line"></a>
+    </div>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="../index.html#fv"><span>トップ</span></a></li>
+        <li><a href="../index.html#liftcircle"><span>THE LIFT CIRCLE</span></a></li>
+        <li><a href="../index.html#community"><span>コミュニティ</span></a></li>
+        <!--<li><a href="#"><span>チャレンジメルマガ</span></a></li>-->
+        <li><a href="../index.html#personal"><span>パーソナル</span></a></li>
+        <li><a href="../index.html#whyitworks"><span>続けられる理由</span></a></li>
+        <li><a href="../index.html#howtojoin"><span>参加の流れ</span></a></li>
+        <li><a href="../index.html#pricing"><span>料金</span></a></li>
+        <li><a href="../index.html#faq"><span>よくある質問</span></a></li>
+        <li><a href="/contact/contact.html"><span>お問い合わせ</span></a></li>
+      </ul>
+    </nav>
+    <div class="copyright">
+      <p>© 2026 THE LIFT CIRCLE. All Rights Reserved.</p>
+    </div>
+  </footer>
+    
+</body>
+</html>

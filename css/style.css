@@ -1,0 +1,1205 @@
+@charset "UTF-8";
+
+body{
+  font-family: "Noto Sans JP", "Noto Serif JP", serif;
+}
+
+a{
+  text-decoration: none;
+}
+/****************************************************************************
+ヘッダー
+*****************************************************************************/
+.logo img{
+  height: 40px;
+}
+
+.site-header{
+    padding: 16px 0;
+    background: linear-gradient(to bottom, #f5faff, #fff);
+    /* linear-gradient(線形グラデーション) to bottom(下に向かって色が変わるということ)*/
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.site-header .container{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.logo{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 10px;
+}
+
+.logo a{
+    color: #000;
+}
+
+.nav-toggle{
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    /* 押せるUIにはcursorを書いておく */
+    position: fixed;
+    top: 20px;
+    right: 5%;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-toggle-bar{
+    display: block;
+    width: 34px;
+    height: 2px;
+    background-color: #111;
+    margin: 5px 0;
+    transition: transform .3s ease, opacity .3s ease;
+}
+
+.nav-toggle.is-open .nav-toggle-bar:nth-child(1){
+    transform: translateY(12px) rotate(225deg);
+}
+
+.nav-toggle.is-open .nav-toggle-bar:nth-child(2){
+    opacity: 0;
+}
+
+.nav-toggle.is-open .nav-toggle-bar:nth-child(3){
+    transform: translateY(-12px) rotate(-225deg);
+}
+
+/* SPナビが閉じているときの状態 */
+.global-nav{
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .2);
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .3s ease, visibility .3s ease;
+    z-index: 1000;
+}
+
+/* 横から出てくるメニューパネル本体 */
+.global-nav ul{
+    width: 70%;
+    max-width: 280px;
+    background: #fff;
+    padding: 80px 24px 24px;
+    box-shadow: -4px 0 16px rgba(0, 0, 0, .06);
+    transform: translateX(100%);
+    transition: transform .3s ease;
+    margin: 0;
+    box-sizing: border-box;
+    will-change: transform;
+}
+
+.global-nav li {
+    border-bottom: 1px solid #eee;
+}
+
+.global-nav li:last-child{
+    border-bottom: none;
+}
+
+.global-nav a{
+    display: block;
+    padding: 16px 0;
+    font-size: 17px;
+    font-weight: 500;
+    color: #111;
+    letter-spacing: .5px;
+}
+
+/* SPナビが開いているときの状態 */
+.global-nav.is-open{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.global-nav.is-open ul{
+    transform: translateX(0);
+}
+
+/* スクリーンリーダー用 */
+.sr-only{
+    position: absolute;
+    /* 要素を通常のレイアウトの流れから外し、他の要素の配置に影響を与えなくする。 */
+    width: 1px;
+    height: 1px;
+    /* 完全に非表示(0px)だとスクリーンリーダーが読まないことがあるため、極小サイズに縮小 */
+    margin: -1px;
+    /* 要素の位置を画面外方向に1pxずらして消す。視覚的に見えなくする */
+    padding: 0;
+    /* 余白によってサイズが膨らまないようにする。 */
+    overflow: hidden;
+    /* 要素内のテキストが枠からはみ出さないように隠す */
+    clip: rect(0,0,0,0);
+    /* 要素の表示領域を0に切り取る */
+    border: 0;
+    /* 万が一ブラウザが枠線をつけても見えないようにリセット */
+}
+
+/* メニュー */
+.menu{
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  background: #ffadad;
+  transform: translateX(100%);
+  transition: transform .4s ease;
+  margin-left: 20%;
+  padding: 10px;
+  height: 100%;
+}
+
+.menu.is-open{
+  transform: translateX(0);
+}
+
+/****************************************************************************
+ファーストビュー
+*****************************************************************************/
+.fv-container{
+  position: relative;
+}
+
+.fv-img-box{
+  overflow: hidden;
+}
+
+.fv-img-box img{
+  width: 180%;
+}
+
+.slogan,
+.sub-slogan{
+  position: absolute;
+}
+
+.slogan{
+  top: 80px;
+  left: 30px;
+  color: #fff;
+  font-size: .8em;
+  line-height: 1;
+  opacity: .7;
+}
+
+.slogan span{
+  font-size: 4em;
+  letter-spacing: .1em;
+  display: inline;
+  font-weight: bold;
+}
+
+.sub-slogan{
+  top: 260px;
+  left: 250px;
+  color: #fff;
+  font-size: .6em;
+  letter-spacing: .1em;
+  opacity: .8;
+}
+
+/****************************************************************************
+セクションタイトル（共通）
+*****************************************************************************/
+.section-title{
+  text-align: center;
+  margin: 0;
+  padding: 100px 0 70px 0;
+}
+
+.line-adjust-wrapper{
+  display: inline-block;
+  text-align: center;
+}
+
+.en-title{
+  font-size: .9em;
+  font-weight: bold;
+  letter-spacing: .06em;
+  margin: 0;
+  padding-bottom: 8px;
+}
+
+.title-line{
+  background: #70A1D5;
+  height: 6px;
+  border-radius: 100px;
+  width: 100%;
+  display: block;
+  margin: auto;
+  transform: scaleX(1.2);
+  min-width: 80px;
+}
+
+.jp-title{
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: .06em;
+  margin: 0;
+  padding-top: 8px;
+}
+
+main{
+  max-width: 1280px;
+  margin: auto;
+}
+
+/****************************************************************************
+THE LIFT CIRCLE
+*****************************************************************************/
+.about-liftcircle{
+  max-width: 95%;
+  margin: auto;
+}
+
+.about-liftcircle p{
+  margin: 0;
+  padding-bottom: 25px;
+  font-weight: 500;
+}
+
+.linebox{
+  position: relative;
+  border: 2px solid #2b6fd6;
+  border-radius: 3px;
+  padding: 60px 30px 30px;
+  margin-top: 40px;
+  max-width: 90%;
+  margin: 50px auto;
+}
+
+.linebox-title{
+  position: absolute;
+  background-color: #fff;
+  top: -25px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 20px;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: #2b6fd6;
+  white-space: nowrap;
+}
+
+.recommend-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recommend-list li{
+  background: #1f63b8;
+  color: #fff;
+  padding: 18px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.services-to-continue-title p{
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 900;
+}
+
+.services-to-continue-grid-parent{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  width: 90%;
+  margin: auto;
+}
+
+.services-to-continue-grid-child{
+  border: #000 1.5px solid;
+  border-radius: 3px;
+  overflow: hidden;
+  text-align: center;
+  color: #000;
+}
+
+.services-to-continue-grid-child img{
+  height: auto;
+  width: 100%;
+  border-radius: 3px;
+}
+
+.services-title{
+  font-weight: bold;
+}
+
+.services-text{
+  padding: 0 5px;
+  margin: auto;
+  font-size: .9em;
+  text-align: left;
+}
+
+.read-more{
+  color: #1b14d8;
+  text-align: end;
+  padding: 0 20px;
+}
+/****************************************************************************
+コミュニティ
+*****************************************************************************/
+.community-detail-back{
+  width: 90%;
+  margin: auto;
+  background-color: #0C5BB6;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.community-detail-line{
+  display: block;
+  border: #fff 1px solid;
+  margin: 2%;
+  border-radius: 3px;
+  margin: 5px;
+}
+
+.community-detail-text{
+  margin: 0;
+  padding: 25px;
+  color: #fff;
+}
+
+.community-content-title{
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 60px 0 0 0;
+  text-align: center;
+}
+
+.community-content-text p{
+  max-width: 90%;
+  margin: auto;
+  padding: 25px;
+}
+
+.community-positioning{
+  margin-top: 60px;
+}
+
+.community-positioning-back{
+  position: relative;
+  border: #0C5BB6 1.5px solid;
+  width: 90%;
+  border-radius: 3px;
+  margin: auto;
+}
+
+.community-positioning-title p{
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #0C5BB6;
+  background: #fff;
+  white-space: nowrap;
+  padding: 0 20px;
+}
+
+.community-positioning-text{
+  padding: 40px;
+}
+/****************************************************************************
+チャレンジメルマガ
+*****************************************************************************/
+
+/****************************************************************************
+パーソナル
+*****************************************************************************/
+.personal-detail-back{
+  width: 90%;
+  margin: auto;
+  background-color: #0C5BB6;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.personal-detail-line{
+  display: block;
+  border: #fff 1px solid;
+  margin: 2%;
+  border-radius: 3px;
+  margin: 5px;
+}
+
+.personal-detail-text{
+  margin: 0;
+  padding: 25px;
+  color: #fff;
+}
+
+.personal-content-title{
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 60px 0 0 0;
+  text-align: center;
+}
+
+.personal-content-text p{
+  max-width: 90%;
+  margin: auto;
+  padding: 25px;
+}
+
+.personal-strengths p{
+  width: 90%;
+  margin: 20px auto;
+}
+
+.personal-strengths span{
+  font-size: .8em;
+}
+
+.personal-flowofservice-title p{
+  font-weight: bold;
+  font-size: 1.2em;
+  text-align: center;
+  margin: 80px 0 40px 0;
+}
+
+.personal-flowofservice-grid-parent{
+  display: grid;
+  gap: 40px;
+}
+
+.personal-flowofservice-grid-child{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.personal-flowofservice-how{
+  display: flex;
+  align-items: end;
+}
+
+.personal-flowofservice-how p:first-child{
+  font-size: 2.5em;
+  padding: 0 10px;
+}
+
+.personal-flowofservice-how p:last-child{
+  padding-bottom: 9px;
+}
+
+.personal-flowofservice-how p{
+  margin: 0;
+  font-weight: bold;
+  color: #0C5BB6;
+}
+
+.personal-flowofservice-back{
+  position: relative;
+  border: #0C5BB6 1.5px solid;
+  border-radius: 3px;
+}
+
+.personal-flowofservice-text{
+  padding: 15px;
+}
+/****************************************************************************
+続けられる理由
+*****************************************************************************/
+.whyitworks-important{
+  text-align: center;
+  font-weight: 500;
+}
+
+.whyitworks-title{
+  display: flex;
+  align-items: end;
+  width: 90%;
+  margin: 80px auto 0 auto;
+}
+
+.whyitworks-title p:first-child{
+  color: #0C5BB6;
+  font-size: 2.5em;
+  font-weight: bold;
+  padding: 0 5px 0 10px;
+  margin: 0;
+}
+
+.whyitworks-title p:last-child{
+  color: #0C5BB6;
+  font-size: 1.2em;
+  font-weight: 500;
+  padding-bottom: 9px;
+  margin: 0;
+}
+
+.whyitworks-text{
+  border: #0C5BB6 1.5px solid;
+  border-radius: 3px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+}
+/****************************************************************************
+参加の流れ
+*****************************************************************************/
+.howtojoin-flow-num{
+  font-size: 2.8em;
+  font-weight: 900;
+  margin: 0 auto;
+  text-align: center;
+  color: #0C5BB6;
+}
+
+.howtojoin-flow-num p{
+  margin: 80px 0 0 0;
+}
+
+.howtojoin-flow-box{
+  background-color: #0C5BB6;
+  text-align: center;
+  padding: 20px 10%;
+  width: 90%;
+  margin: auto;
+  border-radius: 3px;
+}
+
+.howtojoin-flow-title{
+  display: inline-block;
+  border: #fff 1px solid;
+  width: 100%;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.howtojoin-flow-text{
+  color: #fff;
+  padding: 30% 0;
+  text-align: left;
+}
+
+.line-link{
+  padding: 30px 0 0 0;
+}
+
+.line-link a{
+  font-size: 1.15em;
+  color: #fff;
+  text-decoration: underline;
+}
+
+/****************************************************************************
+料金
+*****************************************************************************/
+.price-list-title{
+  font-size: 1.2em;
+  text-align: center;
+  margin: 0 0 100px 0;
+  font-weight: 500;
+}
+
+.price-list-title span{
+  font-size: .7em;
+}
+
+.personal-price-list-grid-parent{
+  display: grid;
+  gap: 100px;
+  margin: 100px 0 0 0;
+}
+
+.personal-price-relative{
+  position: relative;
+  width: 90%;
+  margin: auto;
+  border-radius: 3px;
+}
+
+.personal-price-premium{
+  border: #D2BA1D 2px solid;
+}
+
+.personal-price-title-premium{
+  color: #D2BA1D;
+}
+
+.personal-price-title p{
+  font-size: 2.7em;
+  font-weight: 900;
+  letter-spacing: .15em;
+  background-color: #fff;
+  margin: 0;
+  display: inline-block;
+  padding: 0 10px;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.personal-price-detail{
+  text-align: center;
+  padding: 30px 0 20px 0;
+  font-size: .9em;
+}
+
+.personal-price-box{
+  width: 90%;
+  margin: auto;
+}
+
+.personal-price-box p:nth-of-type(1){
+  font-size: 1.3em;
+  font-weight: 500;
+  display: inline-block;
+  transform: rotate(-20deg) translateX(-15px) translateY(10px);
+}
+
+.personal-price-box p:nth-of-type(2){
+  font-size: 3em;
+  font-weight: 900;
+  letter-spacing: .02em;
+  text-align: center;
+}
+
+.personal-price-box p:nth-of-type(3){
+  text-align: right;
+}
+
+.personal-price-box p{
+  margin: 0;
+}
+
+.personal-service-list ul{
+  list-style: none;
+  margin: auto;
+  padding: 60px 0 50px 50px;
+}
+
+.personal-service-list ul li{
+  padding: 10px 0;
+}
+
+.personal-price-standard{
+  border: #0C5BB6 2px solid;
+  margin-top: 100px;
+}
+
+.personal-price-title-standard{
+  color: #0C5BB6;
+}
+
+.personal-price-standard-recomtext{
+  position: absolute;
+  color: #0C5BB6;
+  font-size: 1.5em;
+}
+
+.personal-price-standard-recomtext p{
+  margin: 0;
+}
+
+.personal-price-standard-recomtext p:nth-of-type(1){
+  transform: translateX(20px) translateY(-100px) rotate(-10deg);
+}
+
+.personal-price-standard-recomtext p:nth-of-type(2){
+  transform: translateX(170px) translateY(-150px) rotate(18deg);
+}
+
+.personal-price-basic{
+  border: #8C8C8C 2px solid;
+}
+
+.personal-price-title-basic{
+  color: #8C8C8C;
+}
+
+.community-price-list-box{
+  margin: 100px 0 0 0;
+}
+
+.community-price-relative{
+  position: relative;
+  width: 90%;
+  margin: auto;
+  border-radius: 3px;
+  border: #0C5BB6 2px solid;
+}
+
+.community-price-title p{
+  font-size: 2.7em;
+  font-weight: 900;
+  letter-spacing: .15em;
+  background-color: #fff;
+  margin: 0;
+  display: inline-block;
+  padding: 0 10px;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  color: #0C5BB6;
+}
+
+.community-price-detail{
+  margin: 60px 0 0 0;
+  text-align: center;
+  font-size: .9em;
+}
+
+.community-price-box{
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 900;
+}
+
+.community-price-box p span{
+  font-size: .5em;
+  font-weight: 500;
+  padding: 0 10px 0 0;
+}
+
+.community-service-list ul{
+  list-style: none;
+  text-align: center;
+  padding: 0 0 30px 0;
+}
+
+.community-service-list ul li{
+  padding: 10px 0 ;
+}
+
+/****************************************************************************
+よくある質問
+*****************************************************************************/
+.accordion {
+  max-width: 90%;
+  margin: 40px auto;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: left;
+  background: #0C5BB6;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  color: #fff;
+}
+
+.accordion-header::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-header.active::after {
+  content: "-";
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #0C5BB6;
+  padding: 0 20px;
+}
+
+.accordion-content p {
+  padding: 20px 0;
+  color: #fff;
+}
+/****************************************************************************
+お問い合わせ
+*****************************************************************************/
+.contactform-link{
+  background: #0C5BB6;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.contactform-link a{
+  color: #fff;
+  font-weight: 500;
+  border: #fff .1px solid;
+  border-radius: 20px;
+  display: inline-block;
+  padding: 10px 30px;
+}
+
+/****************************************************************************
+募金グラフ
+*****************************************************************************/
+.graph{
+  display: none;
+}
+/****************************************************************************
+フッター
+*****************************************************************************/
+footer{
+  background: linear-gradient(to bottom, #0C5BB6, #052D5A);
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.footer-img-area{
+  padding: 0 0 30px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-img-area a{
+  padding: 20px;
+}
+
+.footer-img-area a img{
+  max-width: 40px;
+}
+
+footer nav li{
+  padding: 6px 0;
+}
+
+footer nav li a{
+  color: #fff;
+}
+
+.copyright{
+  color: #fff;
+  padding-top: 20px;
+  font-size: .7em;
+}
+/****************************************************************************
+お問い合わせページ
+*****************************************************************************/
+.hero{
+  text-align: center;
+  padding: 80px 0 50px 0;
+}
+
+.contact-lead{
+  font-size: .9em;
+  display: inline-block;
+  margin: auto;
+  padding: 0 0 80px 0;
+}
+
+.contact {
+  padding: 100px 0px;
+}
+
+.contact-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact-lead {
+  margin-bottom: 30px;
+  line-height: 1.8;
+  font-size: .8em;
+  color: #666;
+  text-align: center;
+}
+
+.form-field {
+  margin-bottom: 25px;
+}
+
+.form-field label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #333;
+}
+
+.form-field input[type="text"],
+.form-field input[type="email"],
+.form-field textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+}
+
+.contact-submit-wrap {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.contact-submit {
+  background-color: #0C5BB6;
+  color: #fff;
+  padding: 15px 60px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px; /* 丸みのあるボタン */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.contact-submit:hover {
+  background-color: #555;
+  transform: translateY(-2px); /* 少し浮き上がる演出 */
+}
+
+/* 下部の注釈 */
+.contact-note {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #888;
+  line-height: 1.6;
+}
+
+/* スマホ対応の調整 */
+@media (max-width: 480px) {
+  .contact-inner {
+    padding: 25px 20px;
+  }
+  .contact-submit {
+    width: 100%; /* スマホではボタンを横いっぱいに */
+  }
+}
+
+@media (min-width: 768px){
+
+    .logo img{
+      height: 70px;
+    }
+
+    /* PCではヘッダーごと追従 */
+    .site-header{
+        position: sticky;
+        top: 0;
+        padding: 8px 0;
+        z-index: 1000;
+    }
+
+    .container{
+      max-width: 1280px;
+      justify-content: space-between;
+      align-items: center;
+      margin: auto;
+    }
+
+    /* ハンバーガーメニュー非表示 */
+    .nav-toggle{
+        display: none;
+    }
+
+    /* グローバルナビゲーションを「普通の表示に戻す」 */
+    .global-nav{
+        position: static;
+        background: none;
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        flex: 1;
+    }
+
+    /* 横並びにする */
+    .global-nav ul{
+        width: auto;
+        max-width: none;
+        padding: 0;
+        margin: 0;
+        box-shadow: none;
+        transform: none;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        background: transparent;
+    }
+
+    .global-nav li,
+    .global-nav li:last-child{
+        border: none;
+    }
+
+    .global-nav a{
+        position: relative;
+        display: inline-block;
+        padding: 0 5px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .global-nav a span{
+        display: inline-block;
+        transition: transform .2s ease;
+    }
+
+    .global-nav a:hover span{
+        transform: translateY(-2px);
+    }
+
+    .global-nav a::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0%;
+        height: 2px;
+        background-color: #e3ebff;
+        transition: width .25s ease;
+    }
+
+    .global-nav a:hover::after{
+        width: 100%;
+    }
+
+    /****************************************************************************
+ファーストビュー
+*****************************************************************************/
+.fv-img-box img{
+  width: 100%;
+  height: 100%;
+}
+
+.slogan{
+  top: 100px;
+  left: 100px;
+  font-size: 1.2em;
+  opacity: .8;
+}
+
+.sub-slogan{
+  top: 460px;
+  left: 650px;
+  font-size: 1em;
+  letter-spacing: .2em;
+  opacity: .9;
+}
+
+/****************************************************************************
+THE LIFT CIRCLE
+*****************************************************************************/
+.about-liftcircle{
+  text-align: center;
+}
+
+.services-text{
+  text-align: center;
+}
+
+/****************************************************************************
+コミュニティ
+*****************************************************************************/
+.community-detail-text{
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.community-content-text p{
+  text-align: center;
+}
+
+.community-positioning-text{
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.community-positioning-text{
+  text-align: left;
+}
+
+/****************************************************************************
+パーソナル
+*****************************************************************************/
+
+
+.personal-detail-text{
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.personal-flowofservice-grid-parent{
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.personal-flowofservice-back{
+  height: 86%;
+}
+
+/****************************************************************************
+参加の流れ
+*****************************************************************************/
+.howtojoin-flow-text{
+  padding: 8% 0;
+  text-align: center;
+}
+
+/****************************************************************************
+料金
+*****************************************************************************/
+.personal-price-list-grid-parent{
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0px;
+  margin: 200px 0 0 0;
+}
+
+.personal-price-relative{
+  height: 100%;
+}
+
+.personal-price-standard{
+  margin-top: 0px;
+}
+
+/****************************************************************************
+フッター
+*****************************************************************************/
+footer nav ul{
+  display: flex;
+  justify-content: space-between;
+  padding: 6% 5%;
+}
+
+}
