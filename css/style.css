@@ -321,6 +321,19 @@ THE LIFT CIRCLE
   font-weight: 600;
 }
 
+.traning-menu-cp{
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.2em;
+  border: #0C5BB6 2px solid;
+  border-radius: 3px;
+}
+
+.traning-menu-cp p{
+  padding: 0 10px;
+}
+
 .services-to-continue-title p{
   text-align: center;
   font-size: 1.2em;
@@ -827,7 +840,11 @@ THE LIFT CIRCLE
 
 .cp{
   width: 90%;
-  margin: auto;
+  margin: 20px auto;
+  background-color: #052D5A;
+  color: #fff;
+  text-align: center;
+  padding: 20px 20px;
 }
 
 /****************************************************************************
